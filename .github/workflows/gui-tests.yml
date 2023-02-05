@@ -17,11 +17,9 @@ jobs:
         with:
           java-version: 14
 
-      - name: Install Maven
-        uses: maven-actions/setup-maven@v1
-        with:
-          maven-version: 3.6.3
-
+      - name: Install dependencies
+          run: ./gradlew clean build --no-daemon
+          
       - name: Download ChromeDriver
         run: |
           wget https://chromedriver.storage.googleapis.com/${SELENIUM_DRIVER_VERSION}/chromedriver_linux64.zip
@@ -32,4 +30,4 @@ jobs:
         run: export PATH=$PATH:$PWD
 
       - name: Run Selenium Tests
-        run: mvn clean test -Dwebdriver.chrome.driver=chromedriver
+          run: ./gradlew test -Dwebdriver.chrome.driver=./chromedriver --no-daemon
