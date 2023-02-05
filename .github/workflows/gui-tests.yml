@@ -18,8 +18,10 @@ jobs:
           java-version: 14
 
       - name: Install dependencies
-          run: ./gradlew clean build --no-daemon
-          
+          run: |
+          chmod +x gradlew
+          ./gradlew clean build --no-daemon
+
       - name: Download ChromeDriver
         run: |
           wget https://chromedriver.storage.googleapis.com/${SELENIUM_DRIVER_VERSION}/chromedriver_linux64.zip
