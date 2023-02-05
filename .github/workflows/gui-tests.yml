@@ -3,7 +3,7 @@ name: Selenium Tests
 on: [push]
 
 env:
-  SELENIUM_DRIVER_VERSION: "109.0.5414.120"
+  SELENIUM_DRIVER_VERSION: "109.0.5414.25"
 
 jobs:
   selenium-tests:
