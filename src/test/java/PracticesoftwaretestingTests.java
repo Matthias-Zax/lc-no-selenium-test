@@ -54,7 +54,7 @@ public class PracticesoftwaretestingTests {
         // Assert right header after the login -> Login is successful
         WebElement message = driver.findElement(By.xpath("//div[contains(@data-test, 'error')] /div"));
         assertTrue(message.getText().contains("Invalid email or password"), "Error Message is not correct!");
- 
+
         driver.quit();
     }
 

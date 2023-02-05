@@ -1,0 +1,35 @@
+name: Selenium Tests
+
+on: [push]
+
+env:
+  SELENIUM_DRIVER_VERSION: "109.0.5414.120"
+
+jobs:
+  selenium-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 14
+
+      - name: Install Maven
+        uses: maven-actions/setup-maven@v1
+        with:
+          maven-version: 3.6.3
+
+      - name: Download ChromeDriver
+        run: |
+          wget https://chromedriver.storage.googleapis.com/${SELENIUM_DRIVER_VERSION}/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          rm chromedriver_linux64.zip
+
+      - name: Set ChromeDriver path
+        run: export PATH=$PATH:$PWD
+
+      - name: Run Selenium Tests
+        run: mvn clean test -Dwebdriver.chrome.driver=chromedriver
