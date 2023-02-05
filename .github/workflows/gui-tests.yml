@@ -33,4 +33,4 @@ jobs:
         run: export PATH=$PATH:$PWD
 
       - name: Run Selenium Tests
-          run: ./gradlew test -Dwebdriver.chrome.driver=./chromedriver --no-daemon
+        run: ./gradlew test -Dwebdriver.chrome.driver=./chromedriver --no-daemon
