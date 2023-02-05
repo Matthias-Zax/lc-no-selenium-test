@@ -21,7 +21,7 @@ jobs:
         run: |
           chmod +x ./gradlew
           ls -ltr
-          ./gradlew clean build --no-daemon
+          ./gradlew clean build --no-daemon -x test
 
       - name: Download ChromeDriver
         run: |
