@@ -19,7 +19,8 @@ jobs:
 
       - name: Install dependencies
           run: |
-          chmod +x gradlew
+          chmod +x ./gradlew
+          ls -ltr
           ./gradlew clean build --no-daemon
 
       - name: Download ChromeDriver
