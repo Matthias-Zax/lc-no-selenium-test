@@ -1,1 +1,1 @@
-# lc-no-selenium-test
+# selenium-simple-google-test
