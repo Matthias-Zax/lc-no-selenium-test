@@ -34,3 +34,10 @@ jobs:
 
       - name: Run Selenium Tests
         run: ./gradlew test -Dwebdriver.chrome.driver=./chromedriver --no-daemon
+        
+      - name: Upload Test Report
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Gradle Test Report
+          path: build/reports/tests
