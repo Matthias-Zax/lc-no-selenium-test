@@ -11,7 +11,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GoogleTests {
@@ -27,7 +26,7 @@ public class GoogleTests {
     @BeforeEach
     void setupTest() {
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
     @AfterEach
